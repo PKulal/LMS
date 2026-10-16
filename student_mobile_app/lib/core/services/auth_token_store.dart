@@ -3,7 +3,7 @@
 
 import 'dart:convert';
 
-import 'package:lms/utils/app_exports.dart';
+import 'package:tuturloom/utils/app_exports.dart';
 
 /// The **synchronous** mirror of the persisted session.
 ///

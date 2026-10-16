@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Pace Wisdom Solutions Pvt. Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
-import 'package:lms/utils/app_exports.dart';
+import 'package:tuturloom/utils/app_exports.dart';
 
 /// My Courses: the list, the search box and the filter chips.
 ///

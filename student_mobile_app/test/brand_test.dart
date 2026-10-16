@@ -10,7 +10,7 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lms/utils/app_exports.dart';
+import 'package:tuturloom/utils/app_exports.dart';
 
 import 'support/fake_api.dart';
 
@@ -61,6 +61,49 @@ void main() {
         brand.accentHex,
       );
       expect(restored, brand);
+    });
+  });
+
+  group('the product default brand', () {
+    // The app's own colour, used before an organization is known and whenever
+    // one supplies no usable hex. Pinned because it is a brand decision, not
+    // an implementation detail — and because every derived colour in the
+    // theme is computed from it.
+    test('is the product primary', () {
+      expect(AppPalette.seedPrimary, const Color(0xFF255D93));
+      expect(AppBrand.fallback.primary, AppPalette.seedPrimary);
+      expect(AppBrand.fallback.usesDefaultRings, isTrue);
+    });
+
+    test('carries its own text and fills in light mode without correction', () {
+      // Dark enough to clear 4.5:1 on a white surface raw, so `ensureContrast`
+      // leaves it alone and the light theme shows the brand colour itself
+      // rather than a darkened approximation of it.
+      expect(
+        AppBrand.fallback.textFor(Brightness.light),
+        AppPalette.seedPrimary,
+      );
+      expect(
+        AppBrand.fallback.fillFor(Brightness.light),
+        AppPalette.seedPrimary,
+      );
+      expect(
+        contrastRatio(AppPalette.white, AppPalette.seedPrimary),
+        greaterThanOrEqualTo(4.5),
+      );
+    });
+
+    test('is lifted for dark mode rather than shown raw', () {
+      // Too dark to read on the dark surface at 2.45:1, so the machinery
+      // lightens it. What matters is that it clears the floor, not the exact
+      // shade it lands on.
+      final Color onDark = AppBrand.fallback.textFor(Brightness.dark);
+
+      expect(onDark, isNot(AppPalette.seedPrimary));
+      expect(
+        contrastRatio(onDark, AppPalette.dSurface),
+        greaterThanOrEqualTo(4.5),
+      );
     });
   });
 
@@ -171,7 +214,7 @@ void main() {
     setUpAll(() async {
       TestWidgetsFlutterBinding.ensureInitialized();
       dotenv.loadFromString(envString: 'API_BASE_URL=https://api.test.local');
-      tempDir = await Directory.systemTemp.createTemp('lms_brand_');
+      tempDir = await Directory.systemTemp.createTemp('tuturloom_brand_');
       Hive.init(tempDir.path);
       for (final String box in HSBox.all) {
         await Hive.openBox<dynamic>(box);

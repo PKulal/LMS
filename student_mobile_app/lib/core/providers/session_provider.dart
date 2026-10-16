@@ -3,7 +3,7 @@
 
 import 'dart:convert';
 
-import 'package:lms/utils/app_exports.dart';
+import 'package:tuturloom/utils/app_exports.dart';
 
 /// The UI-facing source of truth for "who is signed in, and where".
 ///
