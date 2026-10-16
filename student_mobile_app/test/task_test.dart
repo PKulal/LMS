@@ -13,7 +13,7 @@ import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lms/utils/app_exports.dart';
+import 'package:tuturloom/utils/app_exports.dart';
 
 import 'support/fake_api.dart';
 
@@ -78,7 +78,7 @@ void main() {
   setUpAll(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
     dotenv.loadFromString(envString: 'API_BASE_URL=https://api.test.local');
-    tempDir = await Directory.systemTemp.createTemp('lms_task_');
+    tempDir = await Directory.systemTemp.createTemp('tuturloom_task_');
     Hive.init(tempDir.path);
     for (final String box in HSBox.all) {
       await Hive.openBox<dynamic>(box);

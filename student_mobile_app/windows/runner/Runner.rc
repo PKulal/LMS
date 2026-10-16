@@ -93,12 +93,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "lms" "\0"
+            VALUE "FileDescription", "Tuturloom" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "lms" "\0"
+            VALUE "InternalName", "Tuturloom" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2026 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "lms.exe" "\0"
-            VALUE "ProductName", "lms" "\0"
+            VALUE "OriginalFilename", "tuturloom.exe" "\0"
+            VALUE "ProductName", "Tuturloom" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

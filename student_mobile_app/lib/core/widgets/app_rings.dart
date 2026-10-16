@@ -4,7 +4,7 @@
 import 'dart:math' as math;
 import 'dart:ui' as ui;
 
-import 'package:lms/utils/app_exports.dart';
+import 'package:tuturloom/utils/app_exports.dart';
 
 /// The concentric learning rings from the design.
 ///

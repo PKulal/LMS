@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Pace Wisdom Solutions Pvt. Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
-import 'package:lms/utils/app_exports.dart';
+import 'package:tuturloom/utils/app_exports.dart';
 
 /// Raw palette, straight from `design_tokens.json`.
 ///
@@ -11,7 +11,7 @@ import 'package:lms/utils/app_exports.dart';
 /// runtime (see [AppBrand]).
 abstract final class AppPalette {
   // Default brand pair.
-  static const Color seedPrimary = Color(0xFF2F78B3);
+  static const Color seedPrimary = Color(0xFF255D93);
   static const Color seedAccent = Color(0xFFE0517D);
 
   static const Color ink = Color(0xFF0D1B2A);

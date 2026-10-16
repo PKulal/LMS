@@ -3,7 +3,7 @@
 
 import 'dart:math' as math;
 
-import 'package:lms/utils/app_exports.dart';
+import 'package:tuturloom/utils/app_exports.dart';
 
 /// The 270° gauge on "Overall Progress".
 ///
